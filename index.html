@@ -1,123 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignments Index</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 40px;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5); /* Gradient background */
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <title>Assignments Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 20px;
+      color: #fff;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            max-width: 600px;
-            margin: auto;
-        }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      animation: float 4s ease-in-out infinite;
+    }
 
-        li {
-            background-color: #fff;
-            margin: 15px 0;
-            padding: 20px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        }
+    .info {
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 1s ease forwards;
+    }
 
-        /* Shadow color effects on hover */
-        li:nth-child(1):hover { box-shadow: 0 4px 20px rgba(30, 144, 255, 0.4); }
-        li:nth-child(2):hover { box-shadow: 0 4px 20px rgba(60, 179, 113, 0.4); }
-        li:nth-child(3):hover { box-shadow: 0 4px 20px rgba(255, 140, 0, 0.4); }
-        li:nth-child(4):hover { box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4); }
-        li:nth-child(5):hover { box-shadow: 0 4px 20px rgba(255, 99, 71, 0.4); }
-        li:nth-child(6):hover { box-shadow: 0 4px 20px rgba(0, 206, 209, 0.4); }
-        li:nth-child(7):hover { box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4); }
-        li:nth-child(8):hover { box-shadow: 0 4px 20px rgba(46, 139, 87, 0.4); }
-        li:nth-child(9):hover { box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4); }
+    .section {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
 
-        a {
-            color: #1e90ff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.6s; }
 
-        a:hover {
-            text-decoration: underline;
-            color: #0056b3;
-        }
+    .section:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+    }
 
-        ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
-    margin: 40px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    .section a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
 
-li {
-    background-color: #fff;
-    margin: 15px 0;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .section a:hover {
+      color: #ffe082;
+    }
 
-/* Colorful hover shadow effects for each item */
-li:nth-child(1):hover { box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4); }
-li:nth-child(2):hover { box-shadow: 0 6px 20px rgba(60, 179, 113, 0.4); }
-li:nth-child(3):hover { box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4); }
-li:nth-child(4):hover { box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4); }
-li:nth-child(5):hover { box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4); }
-li:nth-child(6):hover { box-shadow: 0 6px 20px rgba(0, 206, 209, 0.4); }
-li:nth-child(7):hover { box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4); }
-li:nth-child(8):hover { box-shadow: 0 6px 20px rgba(46, 139, 87, 0.4); }
-li:nth-child(9):hover { box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4); }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-li:hover {
-    transform: translateY(-3px);
-}
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
 
-a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
 
-a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-    </style>
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      .info { font-size: 1rem; padding: 8px 16px; }
+      .section a { font-size: 1.4rem; }
+      .section { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>My Assignments</h1>
-    <ul>
-        <li>Assignment 1 - <a href="Assignment_1.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 2 - <a href="Assignment_2.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 3 - <a href="Assignment_3.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 4 - <a href="Assignment_4.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 5 - <a href="Assignment_link_image_table.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 6 - <a href="Assignment_6.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 7 - <a href="Assignment_7.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 8 - <a href="time_table.html" target="_blank">Click here to view</a></li>
-        <li>Assignment 9 - <a href="Assignment_9.html" target="_blank">Click here to view</a></li>
-    </ul>
+  <h1>Web Development Assignments</h1>
+  <div class="info">Roll No: <strong>88</strong> | Batch: <strong>S4</strong></div>
+
+  <div class="section">
+    <a href="html.html">HTML Assignments</a>
+  </div>
+
+  <div class="section">
+    <a href="css.html">CSS Assignments</a>
+  </div>
+
+  <div class="section">
+    <a href="xml.html">XML Assignments</a>
+  </div>
 
 </body>
 </html>

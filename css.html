@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Assignments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #2c3e50, #4ca1af);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      color: #f0f0f0;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    ul {
+      width: 90%;
+      max-width: 850px;
+      list-style: none;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 20px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    li:nth-child(odd) { animation-delay: 0.2s; }
+    li:nth-child(even) { animation-delay: 0.4s; }
+
+    li:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+      display: block;
+    }
+
+    .back {
+      margin-top: 40px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #ffffffcc;
+      font-weight: bold;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s;
+    }
+
+    .back:hover {
+      color: #fff;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      li a { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Assignments</h1>
+
+  <ul>
+    <li><a href="external.html">CSS Assignment 1</a></li>
+    <li><a href="internal.html">CSS Assignment 2</a></li>
+    <li><a href="resume.html">CSS Assignment 3</a></li>
+    <li><a href="Selectors.html">CSS Assignment 4</a></li>
+    <li><a href="timetable.html">CSS Assignment 5</a></li>
+    <li><a href="Website.html">CSS Assignment 6</a></li>
+  </ul>
+
+  <a class="back" href="index.html">← Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HTML Assignments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #2c3e50, #4ca1af);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      color: #f0f0f0;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    ul {
+      width: 90%;
+      max-width: 850px;
+      list-style: none;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 20px 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    li:nth-child(odd) { animation-delay: 0.2s; }
+    li:nth-child(even) { animation-delay: 0.4s; }
+
+    li:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+      display: block;
+    }
+
+    .back {
+      margin-top: 40px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #ffffffcc;
+      font-weight: bold;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s;
+    }
+
+    .back:hover {
+      color: #fff;
+    }
+
+    .scrollTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(255, 255, 255, 0.25);
+      color: #fff;
+      border: none;
+      padding: 16px 20px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s, transform 0.3s;
+      backdrop-filter: blur(12px);
+      display: none;
+    }
+
+    .scrollTop:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      li a { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Assignments</h1>
+
+  <ul>
+    <li><a href="Assignment_1.html">HTML Assignment 1</a></li>
+    <li><a href="Assigment_2.html">HTML Assignment 2</a></li>
+    <li><a href="Assigment_3.html">HTML Assignment 3</a></li>
+    <li><a href="Assignment_4.html">HTML Assignment 4</a></li>
+    <li><a href="Assignment_5.html">HTML Assignment 5</a></li>
+    <li><a href="Assignment_6.html">HTML Assignment 6</a></li>
+    <li><a href="Assignment_7.html">HTML Assignment 7</a></li>
+    <li><a href="Assignment_8.html">HTML Assignment 8</a></li>
+    <li><a href="Assigment_9.html">HTML Assignment 9</a></li>
+    <li><a href="Assignment_10.html">HTML Assignment 10</a></li>
+  </ul>
+
+  <a class="back" href="index.html">← Back to Dashboard</a>
+
+  <button onclick="scrollToTop()" class="scrollTop" title="Back to top">↑</button>
+
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('.scrollTop').style.display =
+        window.scrollY > 300 ? 'block' : 'none';
+    });
+  </script>
+
+</body>
+</html>
