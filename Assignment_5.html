@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Assignment 5</h1>
+    <h2>Roll no.88</h2>
+    <div class="image-gallery">
+        <img src="gateway.jpg" alt="Gateway of India">
+        <img src="goa.jpg" alt="Goa Beach">
+        <img src="manali.jpg" alt="Manali">
+        <img src="oty.jpg" alt="Ooty">
+        <img src="lotus.jpg" alt="Lotus Temple">
+        <img src="rankala.webp" alt="Rankala Lake">
+        <img src="srinagar.jpg" alt="Srinagar">
+        <img src="rose.jpg" alt="Rose Garden">
+        <img src="taj.jpg" alt="Taj Mahal">
+    </div>
+</body>
+</html>
